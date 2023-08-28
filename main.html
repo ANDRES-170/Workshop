@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link href="Main.css">
+        <!--script src="Main.js"></script-->
+    </head>
+    <body onload="">
+        <img src="external/earth.png" class="logo">
+        <p class="label1">
+            Shake Helpers
+        </p>
+        <button class="option" onclick="window.location.href='index.html'">
+            Reportes Recientes
+        </button>
+        <br>
+        <button class="option" onclick="window.location.href='map.html'" id="button_map">
+            Mapa
+        </button>
+        <br>
+        <button class="option" onclick="window.location.href='chat.html'">
+            Foro
+        </button>
+        <br>
+        <button class="urgent">
+            Boton de Emergencias
+        </button>
+        <p id="axis" style="font-size: 100%;">
+
+        </p>
+
+
+        <style>
+            body {
+                background-color: gray;
+                text-align: center;
+            }
+
+            .logo {
+                width: 100%;
+                height: 10%;
+                background: radial-gradient(circle, transparent, cyan, lime, transparent, transparent);
+            }
+
+            .label1 {
+                text-align: center;
+                position: relative;
+                margin-top: -15%;
+                font-size: 100px;
+                font-family: Impact;
+            }
+
+            .urgent {
+                background-color: red;
+                text-align: center;
+                position: relative;
+                top: 90%;
+                margin-top: 90%;
+                font-size: 100px;
+            }
+
+            .option {
+                background-color:green;
+                text-align: center;
+                font-size: 100px;
+                padding: 20px;
+            }
+        </style>
+        <script type="text/javascript">
+            
+            var spam = 0
+            window.addEventListener("deviceorientation", (event) => {
+                //var mov = event.accelerationIncludingGravity;
+                const x = event.beta;
+                const y = event.alpha;
+                const z = event.gamma;
+
+                console.log(x, y, z);
+
+                axis.innerHTML = event.beta
+
+                //Accel_x.value = x
+               // Accel_y.value = y
+                //Accel_z.value = z
+
+
+            
+
+            if ((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) {
+                spam = 1
+                
+            }
+
+            if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
+                window.location.href='alert.html'
+            }
+            });
+
+            addEventListener("devicemotion", (evt) => {});
+            ondevicemotion = (evt) => {
+                const ax = evt.accelerationIncludingGravity.x*1;
+                const ay = evt.accelerationIncludingGravity.y*1;
+                const az = evt.accelerationIncludingGravity.z*1;
+
+                console.log(ax, ay, az)
+            };
+
+            
+
+            function update(event){
+                Accel_x.value = sensor.x*1;
+                Accel_y.value = sensor.y*1;
+                Accel_z.value = sensor.z*1;
+            }
+
+            /*
+            if (window.DeviceMotionEvent == undefined) {
+                console.log("Invalid device")
+            } else {
+                console.log("Device allowed")
+                info.value = "Device allowed"
+            }
+
+            window.addEventListener("devicemotion", accelerometerUpdate, true)
+            
+            function accelerometerUpdate(event) {
+                var ax = event.accelerationIncludingGravity.x*1;
+                var ay = event.accelerationIncludingGravity.y*1;
+                var az = event.accelerationIncludingGravity.z*1;
+
+                Accel_x.value = ax;
+                Accel_y.value = ay;
+                Accel_z.value = az;
+
+                console.log(ax + ", " + ay + ", " + az);
+
+            }
+
+            function refresh() {
+                Accel_x.value = ax;
+                Accel_y.value = ay;
+                Accel_z.value = az;               
+            } 
+*/
+
+
+        </script>
+    </body>
+</html>

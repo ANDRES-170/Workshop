@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Alerta
+        </title>
+    </head>
+    <body style="background-color: red;" onload="">
+        <p class="alert" style="text-align: center; position: relative; margin-top: 50%; font-size: 100px; font-family: Impact;">
+            Alerta de Terremonto
+            <br>
+            Seguir Protocolo de seguridad
+        </p>
+       <audio id="alarm" src="External/alarm.mp3"></audio>
+<script>
+
+var alarm = new Audio('External/alarm.mp3');
+    function alert() {
+        var value = 0
+        alarm.autoplay = true
+        alarm.play();
+
+        
+    }
+    
+</script>
+
+<button onclick="window.location.href='main.html'" style="background-color: red; font-size: 50px; padding: 20px; text-align: center;">
+    Desactivar
+</button>
+<style>
+    .alert {
+        animation: blip 6s ease 0s infinite forwards none;
+    }
+
+    @keyframes blip {
+        0% {
+            background-color: black;
+        }
+
+        25% {
+            background-color: transparent;
+        }
+
+        50% {
+            background-color: black;
+        }
+
+        75% {
+            background-color: transparent;
+        }
+
+        100% {
+            background-color: black;
+        }
+    }
+</style>
+
+    </body>
+</html>
