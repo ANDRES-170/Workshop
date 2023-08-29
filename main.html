@@ -112,6 +112,7 @@
                 axis.innerHTML = ax
             }});*/
 
+            var smos = 0
 
             if (window.DeviceMotionEvent == undefined) {
 	//No accelerometer is present. Use buttons. 	
@@ -130,14 +131,18 @@
                //var aZ = event.accelerationIncludingGravity.z*1;
                var aZ = event.acceleration.z*1;
             
-               axis.innerHTML = aX + "<br>" + aY + "<br>" + aZ;
+               //axis.innerHTML = aX + "<br>" + aY + "<br>" + aZ;
                 console.log(aX, aY, aZ);
             	/* ix aY is negative, switch rotation
             	if (aY <0) {
             		aX = -aX - 180;
             	}*/
             
-                if (aZ >= 98 && aY <= 9.8 && spam == 1) {
+                if (aZ > 0.1 || aZ < -0.1 || aX > 0.1 || aX < -0.1 || aY > 0.1 || aY < -0.1 && spam == 1) {
+                    smos =+ 1   
+                }
+
+                if (smos >= 10){
                     window.location.href='alert.html'
                 }
             }
