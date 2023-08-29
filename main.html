@@ -123,9 +123,9 @@
 
 
             function accelerometerUpdate(event) {
-               var aX = event.accelerationIncludingGravity.x*10;
-               var aY = event.accelerationIncludingGravity.y*10;
-               var aZ = event.accelerationIncludingGravity.z*10;
+               var aX = event.accelerationIncludingGravity.x*1;
+               var aY = event.accelerationIncludingGravity.y*1;
+               var aZ = event.accelerationIncludingGravity.z*1;
             
                axis.innerHTML = aZ;
                 console.log(aX, aY, aZ);
@@ -134,7 +134,7 @@
             		aX = -aX - 180;
             	}*/
             
-                if (aX >= 10 && spam == 1) {
+                if (aZ >= 10 && spam == 1) {
                     window.location.href='alert.html'
                 }
             }
