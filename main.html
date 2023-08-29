@@ -140,8 +140,10 @@
             		aX = -aX - 180;
             	}*/
             
-                if ((aZ > threshold || aZ < -threshold || aX > threshold || aX < -threshold || aY > threshold || aY < -threshold) && spam == 1) {
-                    window.location.href='alert.html'  
+                if (aZ > threshold || aZ < -threshold || aX > threshold || aX < -threshold || aY > threshold || aY < -threshold) {
+                    if (spam == 1) {
+                        window.location.href='alert.html'  
+                    }
                 }
 
                 /*
