@@ -124,6 +124,7 @@
 
 
             var threshold = 0.2
+            var dead = 0
 
             function accelerometerUpdate(event) {
                //var aX = event.accelerationIncludingGravity.x*1;
@@ -141,9 +142,11 @@
             	}*/
             
                 if (aZ > threshold || aZ < -threshold || aX > threshold || aX < -threshold || aY > threshold || aY < -threshold) {
-                    if (spam == 1) {
-                        alert("Terremoto Detectado")
-                        window.location.href='alert.html'  
+                    if (spam == 1 && dead == 0) {
+                        dead = 1;
+                        alert("Terremoto Detectado");
+                        window.location.href='alert.html';
+
                     }
                 }
 
