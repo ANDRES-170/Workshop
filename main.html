@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Permissions-Policy" content="accelerometer *;">
         <title>
 
         </title>
@@ -27,7 +28,8 @@
         <button class="urgent">
             Boton de Emergencias
         </button>
-        <p id="axis" style="font-size: 100%;">
+        
+        <p id="axis" style="font-size: 1000%;">
 
         </p>
 
@@ -70,6 +72,8 @@
         </style>
         <script type="text/javascript">
             
+            
+
             var spam = 0
             window.addEventListener("deviceorientation", (event) => {
                 //var mov = event.accelerationIncludingGravity;
@@ -77,9 +81,9 @@
                 const y = event.alpha;
                 const z = event.gamma;
 
-                console.log(x, y, z);
+                //console.log(x, y, z);
 
-                axis.innerHTML = event.beta
+                
 
                 //Accel_x.value = x
                // Accel_y.value = y
@@ -91,22 +95,46 @@
             if ((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) {
                 spam = 1
                 
-            }
+            }});
 
-            if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
+            /*if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
                 window.location.href='alert.html'
             }
-            });
+            });*/
 
-            addEventListener("devicemotion", (evt) => {});
+    /*        addEventListener("devicemotion", (evt) => {;
             ondevicemotion = (evt) => {
                 const ax = evt.accelerationIncludingGravity.x*1;
                 const ay = evt.accelerationIncludingGravity.y*1;
                 const az = evt.accelerationIncludingGravity.z*1;
 
                 console.log(ax, ay, az)
-            };
+                axis.innerHTML = ax
+            }});*/
 
+
+            if (window.DeviceMotionEvent == undefined) {
+	//No accelerometer is present. Use buttons. 	
+            }
+            else {
+	
+	        window.addEventListener("devicemotion", accelerometerUpdate);
+            }
+
+
+            function accelerometerUpdate(event) {
+               var aX = event.accelerationIncludingGravity.x*10;
+               var aY = event.accelerationIncludingGravity.y*10;
+               var aZ = event.accelerationIncludingGravity.z*10;
+            
+               axis.innerHTML = aX, aY, aZ;
+                console.log(aX, aY, aZ);
+            	/* ix aY is negative, switch rotation
+            	if (aY <0) {
+            		aX = -aX - 180;
+            	}*/
+            
+            }
             
 
             function update(event){
