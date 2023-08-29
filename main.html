@@ -25,7 +25,7 @@
             Foro
         </button>
         <br>
-        <button class="urgent">
+        <button class="urgent" id="msg">
             Boton de Emergencias
         </button>
         
@@ -94,7 +94,7 @@
 
             if ((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) {
                 spam = 1
-                
+                msg.innerHTML = "Activado"
             }});
 
             /*if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
@@ -127,7 +127,7 @@
                var aY = event.accelerationIncludingGravity.y*10;
                var aZ = event.accelerationIncludingGravity.z*10;
             
-               axis.innerHTML = aX, aY, aZ;
+               axis.innerHTML = aY;
                 console.log(aX, aY, aZ);
             	/* ix aY is negative, switch rotation
             	if (aY <0) {
