@@ -127,14 +127,14 @@
                var aY = event.accelerationIncludingGravity.y*1;
                var aZ = event.accelerationIncludingGravity.z*1;
             
-               axis.innerHTML = aZ;
+               axis.innerHTML = aY;
                 console.log(aX, aY, aZ);
             	/* ix aY is negative, switch rotation
             	if (aY <0) {
             		aX = -aX - 180;
             	}*/
             
-                if (aZ >= 10 && spam == 1) {
+                if (aZ >= 98 && spam == 1) {
                     window.location.href='alert.html'
                 }
             }
