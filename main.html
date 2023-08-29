@@ -138,11 +138,11 @@
             		aX = -aX - 180;
             	}*/
             
-                if (aZ > 0.1 || aZ < -0.1 || aX > 0.1 || aX < -0.1 || aY > 0.1 || aY < -0.1 && spam == 1) {
+                /*if (aZ > 0.1 || aZ < -0.1 || aX > 0.1 || aX < -0.1 || aY > 0.1 || aY < -0.1 && spam == 1) {
                     smos =+ 1   
-                }
+                }*/
 
-                if (smos >= 10){
+                if (aZ != 0 || aX != 0 || aY != 0 && spam == 1){
                     window.location.href='alert.html'
                 }
             }
