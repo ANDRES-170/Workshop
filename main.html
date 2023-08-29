@@ -92,9 +92,9 @@
 
             
 
-            if ((Math.round(event.beta/100) == 0) && (Math.round(event.alpha/100)) == 0 && (Math.round(event.gamma/100) == 0)) {
+            if ((Math.round(x/100) == 0) && (Math.round(y/100)) == 0 && (Math.round(z/100) == 0)) {
                 spam = 1
-                
+                msg.innerHTML = "Listo"
             }});
 
             /*if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
@@ -123,9 +123,9 @@
 
 
             function accelerometerUpdate(event) {
-               var aX = event.acceleration.x*10;
-               var aY = event.acceleration.y*10;
-               var aZ = event.acceleration.z*10;
+               var aX = event.accelerationIncludingGravity.x*10;
+               var aY = event.accelerationIncludingGravity.y*10;
+               var aZ = event.accelerationIncludingGravity.z*10;
             
                axis.innerHTML = aY;
                 console.log(aX, aY, aZ);
