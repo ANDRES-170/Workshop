@@ -123,6 +123,8 @@
             }
 
 
+            var threshold = 0.2
+
             function accelerometerUpdate(event) {
                //var aX = event.accelerationIncludingGravity.x*1;
                var aX = event.acceleration.x*1;
@@ -138,7 +140,7 @@
             		aX = -aX - 180;
             	}*/
             
-                if (aZ > 0.1 || aZ < -0.1 || aX > 0.1 || aX < -0.1 || aY > 0.1 || aY < -0.1 && spam == 1) {
+                if (aZ > threshold || aZ < -threshold || aX > threshold || aX < -threshold || aY > threshold || aY < -threshold && spam == 1) {
                     window.location.href='alert.html'  
                 }
 
