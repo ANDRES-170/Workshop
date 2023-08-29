@@ -25,7 +25,7 @@
             Foro
         </button>
         <br>
-        <button class="urgent" id="msg">
+        <button class="urgent" id="msg" onclick="enable()">
             Boton de Emergencias
         </button>
         
@@ -75,6 +75,13 @@
             
 
             var spam = 0
+
+
+            function enable() {
+                alert("alerta activada");
+                spam = 1;
+            }            
+
             window.addEventListener("deviceorientation", (event) => {
                 //var mov = event.accelerationIncludingGravity;
                 const x = event.beta;
@@ -134,7 +141,7 @@
                //var aZ = event.accelerationIncludingGravity.z*1;
                var aZ = event.acceleration.z*1;
             
-               axis.innerHTML = aX + "<br>" + aY + "<br>" + aZ;
+               //axis.innerHTML = aX + "<br>" + aY + "<br>" + aZ;
                 console.log(aX, aY, aZ);
             	/* ix aY is negative, switch rotation
             	if (aY <0) {
