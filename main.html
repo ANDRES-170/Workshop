@@ -94,8 +94,12 @@
 
             if ((Math.round(x/100) == 0) && (Math.round(y/100)) == 0 && (Math.round(z/100) == 0)) {
                 spam = 1
-                alert("alerta activada")
+                
             }});
+
+            if (spam == 1) {
+                alert("alerta activada")
+            }
 
             /*if (!((Math.round(x/10) == 0) && (Math.round(y/10)) == 0 && (Math.round(x/10) == 0)) && spam == 1) {
                 window.location.href='alert.html'
