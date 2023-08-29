@@ -123,9 +123,12 @@
 
 
             function accelerometerUpdate(event) {
-               var aX = event.accelerationIncludingGravity.x*1;
-               var aY = event.accelerationIncludingGravity.y*1;
-               var aZ = event.accelerationIncludingGravity.z*1;
+               //var aX = event.accelerationIncludingGravity.x*1;
+               var aX = event.acceleration.x*1;
+               //var aY = event.accelerationIncludingGravity.y*1;
+               var aY = event.acceleration.y*1;
+               //var aZ = event.accelerationIncludingGravity.z*1;
+               var aZ = event.acceleration.z*1;
             
                axis.innerHTML = aX + "<br>" + aY + "<br>" + aZ;
                 console.log(aX, aY, aZ);
