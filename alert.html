@@ -11,14 +11,17 @@
             <br>
             Seguir Protocolo de seguridad
         </p>
-       <audio id="alarm" src="External/alarm.mp3"></audio>
+        <!--video controls autoplay name="media"><source src="https://andres-170.github.io/Workshop/external/alarm.mp3" type="audio/mp3">
+            <source src="https://andres-170.github.io/Workshop/external/alarm.mp3" type="audio/mp3">
+        </video-->
+        
+       <audio id="alarm" autoplay src="External/alarm.mp3"></audio>
 <script>
 
 var alarm = new Audio('external/alarm.mp3');
     function alert() {
-        alarm("Alerta");
-        alarm.autoplay = true;
-        alarm.play();
+        /*alarm("Alerta");
+        alarm.play();*/
 
         
     }
